@@ -4,7 +4,7 @@
 #include <stdio.h>
 /* betty style doc for function main goes there */
 /**
- * main-Determines if a number is positive negative or zero
+ * main-Determine if number is negative or zero,positive
  *
  * Return:0 (success)
  */
@@ -16,10 +16,10 @@ int main(void)
 	n = rand() - RAND_MAX / 2;
 	/* your code goes there */
 	if (n > 0)
-		printf("%d is positive", n);
+		printf("%d is positive\n", n);
 	else if (n == 0)
-		printf("%d is zero", n);
+		printf("%d is zero\n", n);
 	else if (n < 0)
-		printf("%d is negative", n);
+		printf("%d is negative\n", n);
 	return (0);
 }
