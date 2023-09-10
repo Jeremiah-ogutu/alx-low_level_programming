@@ -2,7 +2,7 @@
 /**
  * main-single digit numbers of base 10
  *
- * Result: 0 (success)
+ * Result:0 (success)
  */
 int main(void)
 {
