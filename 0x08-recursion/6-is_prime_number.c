@@ -24,15 +24,14 @@ int is_prime_number(int n)
 		}
 	else
 	{
-		int i;
-
-		for (i = 5; i * i <= n; i += 6)
+		if ((n % 6 == 1 || n % 6 == 5) &&
+				(n % 5 != 0) && (n % 7 != 0) && (n % 11 != 0))
 		{
-			if (n % i == 0 || n % (i + 2) == 0)
-			{
-				return (0);
-			}
+			return (1);
 		}
-		return (1);
+		else
+		{
+			return (0);
+		}
 	}
 }
