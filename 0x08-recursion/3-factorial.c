@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * factorail-fuction that returns fuctorial of a given number
+ * factorial-fuction that returns fuctorial of a given number
  * @n:is the given  number
  * Return:the factorial -1 error 0 success
  */
-int factorail(int n)
+int factorial(int n)
 {
 	if (n < 0)
 	{
@@ -17,7 +17,7 @@ int factorail(int n)
 		}
 	else
 	{
-		return ((n) * factorail(n - 1));
+		return ((n) * factorial(n - 1));
 	}
 }
 
