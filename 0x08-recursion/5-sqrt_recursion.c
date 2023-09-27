@@ -1,11 +1,11 @@
 #include "main.h"
 /**
- *__sqrt_recursion - fuction that the natural square root of a number
+ *_sqrt_recursion - fuction that the natural square root of a number
  * @n:the number
  *
  * Return:nutural square root if no -1
  */
-int __sqrt_recursion(int n)
+int _sqrt_recursion(int n)
 {
 	if (n < 0)
 	{
