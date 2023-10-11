@@ -12,6 +12,11 @@ void print_integer(int num);
 
 int main(int argc, char *argv[])
 {
+	int num1;
+	int num2;
+	char operator;
+	int result;
+
 	if (argc != 4)
 	{
 		putchar('E');
@@ -23,10 +28,9 @@ int main(int argc, char *argv[])
 		return (ERR_ARGC);
 	}
 
-	int num1 = atoi(argv[1]);
-	char operator = argv[2][0];
-	int num2 = atoi(argv[3]);
-	int result;
+	num1 = atoi(argv[1]);
+	operator = argv[2][0];
+	num2 = atoi(argv[3]);
 
 	switch (operator)
 	{
