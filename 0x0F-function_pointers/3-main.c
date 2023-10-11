@@ -1,4 +1,4 @@
-#include "operation.h"
+#include "3-calc.h"
 #include "error_code.h"
 /**
  * main - this the starting point for arithmeti operation
