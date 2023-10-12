@@ -1,17 +1,15 @@
 #include "3-calc.h"
-#include "error_code.h"
 /**
  * main - this the starting point for arithmeti operation
  * @argc:interger rep
  * @argv:array of pointer
- * @num:the number to be printed
  * Return: 0 success
  */
 
-void print_integer(int num);
-
 int main(int argc, char *argv[])
 {
+	int (*op_func)(int, int);
+
 	int num1;
 	int num2;
 	char operator;
@@ -19,92 +17,25 @@ int main(int argc, char *argv[])
 
 	if (argc != 4)
 	{
-		putchar('E');
-		putchar('r');
-		putchar('r');
-		putchar('o');
-		putchar('r');
-		putchar('\n');
-		return (ERR_ARGC);
+		printf("Error\n");
+		exit(98);
 	}
 
 	num1 = atoi(argv[1]);
 	operator = argv[2][0];
 	num2 = atoi(argv[3]);
 
-	switch (operator)
+	op_func = get_op_func(operator);
+
+
+	if (op_func == NULL)
 	{
-		case '+':
-			result = add(num1, num2);
-			break;
-		case '-':
-			result = subtract(num1, num2);
-			break;
-		case '*':
-			result = multiply(num1, num2);
-			break;
-		case '/':
-			if (num2 == 0)
-			{
-				putchar('E');
-				putchar('r');
-				putchar('r');
-				putchar('o');
-				putchar('r');
-				putchar('\n');
-				return (ERR_DIVIDE_BY_ZERO);
-			}
-			result = divide(num1, num2);
-			break;
-		case '%':
-			if (num2 == 0)
-			{
-				putchar('E');
-				putchar('r');
-				putchar('r');
-				putchar('o');
-				putchar('r');
-				putchar('\n');
-				return (ERR_DIVIDE_BY_ZERO);
-			}
-			result = modulo(num1, num2);
-			break;
-		default:
-			putchar('E');
-			putchar('r');
-			putchar('r');
-			putchar('o');
-			putchar('r');
-			putchar('\n');
-			return (ERR_UNKNOWN_OPERATOR);
+		printf("error\n");
+		exit(99);
 	}
 
-	if (result < 0)
-	{
-		putchar('-');
-		result = -result;
-	}
+	result = op_func(num1, num2);
 
-	print_integer(result);
-	putchar('\n');
+	printf("%d\n", result);
 	return (0);
-}
-/**
- * print_integer-print actual number
- * @num:the number to be printed
- */
-void print_integer(int num)
-{
-	if (num == 0)
-	{
-		putchar('0');
-		return;
-	}
-	while (num > 0)
-	{
-		int digit = num % 10;
-
-		putchar(digit + '0');
-		num /= 10;
-	}
 }
