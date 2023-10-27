@@ -5,7 +5,7 @@
  * @n:pointer of unsigned int
  * @index: the given index
  *
- * Return:1 success else -1 
+ * Return:1 success else -1
  */
 
 int clear_bit(unsigned long int *n, unsigned int index)
